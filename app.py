@@ -192,7 +192,7 @@ elif uploaded_file is not None:
 else:
     st.title("🧬 Genome Annotation Parser")
     st.info(
-        "👈 Upload a GFF3/GTF file from the sidebar, or check "
+        "Upload a GFF3/GTF file from the sidebar, or check "
         "**'Use bundled sample data'** to try the app right away."
     )
     st.markdown(
@@ -273,7 +273,7 @@ st.title("🧬 Genome Annotation Parser")
 st.caption(f"File: `{file_name}` · Format: {detected_format}")
 
 tab_overview, tab_explorer, tab_viz, tab_export = st.tabs(
-    ["📊 Overview", "🔍 Feature Explorer", "📈 Visualizations", "⬇️ Export"]
+    ["Overview", "Feature Explorer", "Visualizations", "Export"]
 )
 
 # ---- Overview tab ---------------------------------------------------------
