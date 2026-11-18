@@ -1,11 +1,6 @@
 """
 Genome Annotation Parser
--------------------------
-A Streamlit web app for parsing, exploring, and visualizing genome
-annotation files in GFF3 or GTF/GFF2 format.
 
-Run locally:
-    streamlit run app.py
 """
 
 import io
