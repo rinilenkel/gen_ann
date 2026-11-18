@@ -1,8 +1,3 @@
-"""
-Genome Annotation Parser
-
-"""
-
 import io
 import re
 import gzip
