@@ -6,16 +6,16 @@ files in **GFF3** or **GTF** format.
 ## Features
 
 - **Format auto-detection** — handles GFF3 (`key=value`) and GTF (`key "value"`)
-  attribute styles, plain text or gzip-compressed (`.gz`)
+  attribute styles, plain text or gzip-compressed (`.gz`).
 - **Overview dashboard** — feature type counts, features per chromosome,
-  strand distribution, source breakdown
+  strand distribution, source breakdown.
 - **Feature explorer** — filter by type, sequence/chromosome, source, length
   range, or free-text search across ID/Name/attributes; inspect any single
-  feature's full attribute set
+  feature's full attribute set.
 - **Visualizations** — length-distribution histograms, a genomic feature map
-  (features plotted along a chosen chromosome), and feature-density plots
+  (features plotted along a chosen chromosome), and feature-density plots.
 - **Export** — download the filtered feature set as CSV or GFF3, or export
-  the full parsed dataset
+  the full parsed dataset.
 
 A small bundled sample GFF3 file (`sample_data/sample.gff3`) lets you try the
 app immediately without uploading your own data.
