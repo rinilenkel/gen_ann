@@ -2,8 +2,6 @@
 
 An interactive web application built with **Python**, **Biopython**, and **Streamlit** to parse, filter, visualize, and export genomic feature annotations from **GenBank (`.gb` / `.gbk`)** files. 
 
-Developed as part of an undergraduate coursework project in **Python and Biopython** (Computational Biology).
-
 ---
 
 ## 📋 Overview
