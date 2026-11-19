@@ -1,38 +1,41 @@
 # 🧬 Genome Annotation Parser
 
-A Streamlit web app for parsing, exploring, and visualizing genome annotation
-files in **GFF3** or **GTF** format.
+An interactive web application built with **Python**, **Biopython**, and **Streamlit** to parse, filter, visualize, and export genomic feature annotations from **GenBank (`.gb` / `.gbk`)** files. 
 
-## Features
+Developed as part of an undergraduate coursework project in **Python and Biopython** (Computational Biology).
 
-- **Format auto-detection** — handles GFF3 (`key=value`) and GTF (`key "value"`)
-  attribute styles, plain text or gzip-compressed (`.gz`).
-- **Overview dashboard** — feature type counts, features per chromosome,
-  strand distribution, source breakdown.
-- **Feature explorer** — filter by type, sequence/chromosome, source, length
-  range, or free-text search across ID/Name/attributes; inspect any single
-  feature's full attribute set.
-- **Visualizations** — length-distribution histograms, a genomic feature map
-  (features plotted along a chosen chromosome), and feature-density plots.
-- **Export** — download the filtered feature set as CSV or GFF3, or export
-  the full parsed dataset.
+---
 
-A small bundled sample GFF3 file (`sample_data/sample.gff3`) lets you try the
-app immediately without uploading your own data.
+## 📋 Overview
 
+Raw genome annotation files contain rich biological metadata—such as gene boundaries, coding sequences (CDS), non-coding RNAs, and functional protein descriptions—that can be difficult to inspect manually. This tool converts raw GenBank records into a structured tabular format and renders an interactive genomic coordinate map directly in the browser.
 
-## Input format notes
+### ✨ Key Features
+* **Automated GenBank Parsing:** Uses `Bio.SeqIO` to extract sequence-level metrics and feature-level qualifiers in memory without writing temporary files to disk.
+* **Genome Summary Dashboard:** Calculates and displays Accession ID, total genome size (bp), overall GC content percentage (`Bio.SeqUtils.gc_fraction`), and total annotated feature count.
+* **Dynamic Filtering & Search:** Filter features by biological category (`gene`, `CDS`, `tRNA`, `rRNA`, etc.) and perform real-time keyword searches across gene symbols, locus tags, and product descriptions.
+* **Interactive Feature Track Map:** Renders a zoomable, horizontal coordinate plot using **Plotly Express** (`px.timeline`) to visualize feature positions and strand orientation (`+` / `-`) along the replicon.
+* **One-Click CSV Export:** Download filtered annotation tables directly as `.csv` files for downstream bioinformatics analysis.
 
-The app expects the standard 9-column tab-separated GFF3/GTF layout:
+---
 
-```
-seqid  source  type  start  end  score  strand  phase  attributes
-```
+## 🛠️ Tech Stack & Dependencies
 
-- Lines starting with `#` are treated as comments/headers and skipped.
-- A `##FASTA` directive (or embedded sequence block) is detected and
-  everything after it is ignored, so you can safely upload GFF3 files with
-  an appended FASTA section.
-- GFF3-style (`ID=x;Parent=y`) and GTF-style (`gene_id "x"; transcript_id "y";`)
-  attribute strings are both parsed into a dictionary you can inspect per
-  feature.
+| Library | Purpose |
+| :--- | :--- |
+| **Python 3.10+** | Core programming language |
+| **Biopython (`Bio`)** | GenBank file parsing (`SeqIO`) and GC content computation (`gc_fraction`) |
+| **Streamlit** | Web application framework and interactive UI components |
+| **Pandas** | Tabular feature structuring, boolean filtering, and CSV serialization |
+| **Plotly Express** | Interactive genomic coordinate visualization |
+
+---
+
+## 📂 Repository Structure
+
+```text
+genome-annotation-parser/
+├── app.py               # Main Streamlit web application and Biopython parser
+├── requirements.txt     # Python dependencies for local setup & cloud deployment
+├── sample_data/         # Optional folder containing sample .gbk files for testing
+└── README.md            # Project documentation
